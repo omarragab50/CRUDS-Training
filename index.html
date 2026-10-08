@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container bg-dark-subtle my-3">
+        
+            <h1 class="text-black text-center p-3">Cruds</h1>
+            <input class="form-control my-2" type="text" placeholder="Enter Product Name" id="pName">
+            <input class="form-control my-2" type="text" placeholder="Enter Product Price" id="pPrice">
+            <input class="form-control my-2" type="text" placeholder="Enter Product Category" id="pCat">
+            <input class="form-control my-2" type="text" placeholder="Enter Product Desc" id="pDesc">
+            <input class="form-control my-2" type="file" id="pImage" >
+            <button onclick="addProuduct()" class="btn btn-primary">Add</button>
+            <input class="form-control my-2" type="text" placeholder="Search...." id="pSearch">
+
+
+            <table class="table text-center" >
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Deck.</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="actionTable">
+                    <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Oppo</td>
+                    <td>1000</td>
+                    <td>mobile</td>
+                    <td>Lorem ipsum dolor sit</td>
+                    <td><img class="p-img" src="images/about.jpg" alt="fgfgfg"></td>
+                    <td>
+                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-warning">Update</button>
+                    </td>
+                    </tr> -->
+                    
+                    
+                    
+                    
+                </tbody>
+            </table>
+        
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

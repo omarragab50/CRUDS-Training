@@ -1,0 +1,12 @@
+git config --global user.name "omarragab50"
+git config --global user.email "omerragb55@gmail.com"
+
+
+echo "# CRUDS-Training" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/omarragab50/CRUDS-Training.git
+git push -u origin main
+
