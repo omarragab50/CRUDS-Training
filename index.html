@@ -20,8 +20,9 @@
             <input class="form-control my-2" type="text" placeholder="Enter Product Category" id="pCat">
             <input class="form-control my-2" type="text" placeholder="Enter Product Desc" id="pDesc">
             <input class="form-control my-2" type="file" id="pImage" >
-            <button onclick="addProuduct()" class="btn btn-primary">Add</button>
-            <input class="form-control my-2" type="text" placeholder="Search...." id="pSearch">
+            <button id="addBtn" onclick="addProuduct()" class="btn btn-primary">Add</button>
+            <button id="updateBtn" onclick="updateProduct()" class="btn btn-warning d-none">Update</button>
+            <input class="form-control my-2" type="text" placeholder="Search...." id="pSearch" oninput="productSearch(this.value)">
 
 
             <table class="table text-center" >
