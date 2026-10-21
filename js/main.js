@@ -6,10 +6,81 @@ var pImageInput = document.getElementById('pImage');
 
 var addBtn = document.getElementById('addBtn')
 var updateBtn = document.getElementById('updateBtn')
+var pNameAlert = document.getElementById('pNameAlert')
+var pPriceAlert = document.getElementById('pPriceAlert');
+var pCatAlert = document.getElementById('pCatAlert');
+var pDescAlert = document.getElementById('pDescAlert');
+var pImageAlert = document.getElementById('pImageAlert');
+
+var regex = {
+    name: /^[\w\s-]{1,10}$/,
+    category: /^(mobile|electronics)$/i,
+    Des: /^.{3,20}$/,
+    image: /^.{1,20}\.(png|jpg)$/
+}
+
 
 var indexToBeUpdate ;
 
 
+function validatePName(){
+    if(regex.name.test(pNameInput.value) === true){
+        console.log('valid name');
+        pNameAlert.classList.add('d-none');
+        return true
+    }else{
+        console.log('invalid name');
+        pNameAlert.classList.remove('d-none');
+        return false
+    }
+}
+function validatepPriceInput(){
+    if(Number(pPriceInput.value) >= 1){
+        console.log('valid price');
+        pPriceAlert.classList.add('d-none');
+        return true
+    }else{
+        console.log('invalid price');
+        pPriceAlert.classList.remove('d-none');
+        return false
+    }
+}
+function validateCategory(){
+    if(regex.category.test(pCatInput.value) === true){
+    console.log('valid category');
+        pCatAlert.classList.add('d-none');
+        return true
+    }else{
+        console.log('invalid category');
+        pCatAlert.classList.remove('d-none');
+        return false
+    }
+}
+function validateDes(){
+    if(regex.Des.test(pDescInput.value) === true){
+    console.log('valid Des');
+        pDescAlert.classList.add('d-none');
+        return true
+    }else{
+        console.log('invalid Des');
+        pDescAlert.classList.remove('d-none');
+        return false
+    }
+}
+function validateImage(){
+    if(pImageInput.files[0]){
+        if(regex.image.test(pImageInput.files[0].name) === true){
+            console.log('valid image');
+        pImageAlert.classList.add('d-none');
+            return true
+        }else{
+            console.log('invalid image');
+        pImageAlert.classList.remove('d-none');
+            return false
+        }
+    }
+    return true;
+}
 
 var allProduct = JSON.parse(localStorage.getItem('allProduct')) || [];
 displayProduct(allProduct)
@@ -20,6 +91,16 @@ displayProduct(allProduct)
 // }
 
 function addProuduct(){
+    var isValidName = validatePName()
+    var isValidPrice = validatepPriceInput()
+    var isValidCategory = validateCategory()
+    var isValidDes = validateDes()
+    var isValidImage = validateImage()
+
+        if(isValidName === false || isValidPrice === false || isValidCategory === false || isValidDes === false || isValidImage === false)
+            return;
+
+
     var product = {
         name: pNameInput.value,
         price: pPriceInput.value,

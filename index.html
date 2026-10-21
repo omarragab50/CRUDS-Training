@@ -15,11 +15,16 @@
     <div class="container bg-dark-subtle my-3">
         
             <h1 class="text-black text-center p-3">Cruds</h1>
-            <input class="form-control my-2" type="text" placeholder="Enter Product Name" id="pName">
-            <input class="form-control my-2" type="text" placeholder="Enter Product Price" id="pPrice">
-            <input class="form-control my-2" type="text" placeholder="Enter Product Category" id="pCat">
-            <input class="form-control my-2" type="text" placeholder="Enter Product Desc" id="pDesc">
+            <input class="form-control my-2" type="text" placeholder="Enter Product Name" id="pName" oninput="validatePName()">
+            <div id="pNameAlert" class="alert alert-danger d-none">Invalid Product Name</div>
+            <input class="form-control my-2" type="text" placeholder="Enter Product Price" id="pPrice" oninput="validatepPriceInput()">
+            <div id="pPriceAlert" class="alert alert-danger d-none">Invalid Product Price</div>
+            <input class="form-control my-2" type="text" placeholder="Enter Product Category" id="pCat" oninput="validateCategory()">
+            <div id="pCatAlert" class="alert alert-danger d-none">Invalid Product Category</div>
+            <input class="form-control my-2" type="text" placeholder="Enter Product Desc" id="pDesc" oninput="validateDes()">
+            <div id="pDescAlert" class="alert alert-danger d-none">Invalid Product Desc</div>
             <input class="form-control my-2" type="file" id="pImage" >
+            <div id="pImageAlert" class="alert alert-danger d-none">Invalid Product Image</div>
             <button id="addBtn" onclick="addProuduct()" class="btn btn-primary">Add</button>
             <button id="updateBtn" onclick="updateProduct()" class="btn btn-warning d-none">Update</button>
             <input class="form-control my-2" type="text" placeholder="Search...." id="pSearch" oninput="productSearch(this.value)">
